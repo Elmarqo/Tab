@@ -1,34 +1,45 @@
 package pl.mareksliwinski;
 import java.util.Arrays;
-import static java.util.Comparator.reverseOrder;
+import java.util.Collections;
+
+import static java.lang.Math.*;
+import static java.util.Collections.*;
 
 public class Tab {
 
-public void setup()
-{
-    String text = ("Ala ma wielkiego kota");
-    int max = text.length() + 1;
-    int[] tab = new int[max];
-    System.out.println(tab.length);
-}
+    Integer max;
+    Integer tab[];
 
-    public void fillOut(int[] tab, int max) {
+    public void setup() {
+        String text = ("Ala ma wielkiego");
+        max = text.length() + 1;
+        tab = new Integer[max];
+    }
 
-        for (int i = max; i > 0; i--) {
-            tab[i] = i * i;
+    public void fillOut(Integer[] tab, Integer max) {
+        for (int i = 0; i < max; i++) {
+            tab[i] = (int) (Math.random() * 100);
+            System.out.println(tab[i]);
         }
     }
 
-
-    /*public void sort(){
+    public void sort() {
+        System.out.println("=================================");
         Arrays.sort(tab);
-        for(int i = 0; i < max; i++){
+        for (int i = 0; i < max; i++) {
             System.out.println(tab[i]);
-        }*/
-        //Arrays.sort(tab, reverseOrder());
-        //for(int i = 0; i < max; i++){
-          //  System.out.println(tab[i]);
-}
+        }
+    }
+
+    public void desSort(){
+        System.out.println("=================================");
+        Arrays.sort(tab, Collections.reverseOrder());
+        for (int i = 0; i < max; i++) {
+            System.out.println(tab[i]);
+            }
+        }
+    }
+
 
 
 
